@@ -1,5 +1,7 @@
 package com.microservices.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,11 @@ public class EmployeeWebEndpoint {
 	@RequestMapping(value = "/findEmployee/{employeeId}", method = RequestMethod.GET)
 	public Employee findEmployee(@PathVariable() Long employeeId){
 		return employeeService.getEmployee(employeeId);
+	}
+	
+	@RequestMapping(value = "/getAllEmployee", method = RequestMethod.GET)
+	public List<Employee> getAllEmployee(){
+		return employeeService.getAllEmployee();
 	}
 
 	public void setEmployeeService(EmployeeService employeeService) {
