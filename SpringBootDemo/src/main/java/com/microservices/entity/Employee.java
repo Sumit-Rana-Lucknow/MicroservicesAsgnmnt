@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 public class Employee implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1521094494583888905L;
 	private Long employeeId;
 	private String employeeName;
 	private String designation;
 	private Long age;
+	private Department dprtmnt;
 
 	public Long getEmployeeId() {
 		return employeeId;
@@ -39,6 +44,14 @@ public class Employee implements Serializable {
 
 	public void setAge(Long age) {
 		this.age = age;
+	}
+
+	public Department getDprtmnt() {
+		return dprtmnt;
+	}
+
+	public void setDprtmnt(Department dprtmnt) {
+		this.dprtmnt = dprtmnt;
 	}
 
 }
