@@ -2,6 +2,14 @@ package com.microservices.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "employee", schema = "organization")
 public class Employee implements Serializable {
 
 	/**
@@ -14,6 +22,8 @@ public class Employee implements Serializable {
 	private Long age;
 	private Department dprtmnt;
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getEmployeeId() {
 		return employeeId;
 	}
